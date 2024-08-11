@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Cards</title>
+    <style>
+        .image-container {
+            position: relative;
+            display: inline-block;
+            padding: 10px;
+            vertical-align: top;
+        }
+        .overlay-text {
+            position: absolute;
+            top: 58%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+            color: #fff; 
+            padding: 10px 20px; 
+            font-size: 20px; 
+            text-align: center;
+        }
+        .card {
+            width: 18rem; 
+            background-image: url(backgroundImage.png); 
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 500px; /* Set a fixed height for the cards */
+        }
+        .card img {
+            width: 100%; 
+            height: 50%; /* Set a fixed height for the images */
+            object-fit: cover; /* Ensures the image covers the area */
+        }
+        .card-body {
+            background-color: white; 
+            opacity: 75%; 
+            margin: 10px;
+            flex-grow: 1;
+        }
+        .card-text {
+            color: black; 
+            padding-left: 10px; 
+            text-align: center;
+        }
+        .list-group {
+            color: black; 
+            padding-left: 20px; 
+            background-color: white; 
+            opacity: 75%; 
+            margin: 10px;
+        }
+        .list-group-item {
+            background-color: transparent; 
+            border: none;
+        }
+        .card-links {
+            color: white;
+            text-align: center; /* Center-aligns the text */
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center-aligns content vertically */
+            height: 30px; /* Adjust height as needed */
+        }
+        .card-link {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+<div class="image-container">
+    <div class="card">
+        <img src="sun.jpeg">
+        <div class="card-body">
+            <p class="card-text">The Sun is the star at the center of the Solar System, powering our entire planet.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Type: Star</li>
+            <li class="list-group-item">Mass: 1.989 X 10^30</li>
+            <li class="list-group-item">Age: 4.603 Billion</li>
+        </ul>
+        <div class="card-body card-links">
+            <a href="https://en.wikipedia.org/wiki/Solar_System#Sun" class="card-link">SUN</a>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <div class="card">
+        <img src="mercury.jpeg">
+        <div class="card-body">
+            <p class="card-text">Mercury is the closest planet to the Sun, with surface temperatures reaching 440°C.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Type: Planet</li>
+            <li class="list-group-item">Mass: 3.30114 X 10^23</li>
+            <li class="list-group-item">Age: N/A</li>
+        </ul>
+        <div class="card-body card-links">
+            <a href="https://en.wikipedia.org/wiki/Mercury_(planet)" class="card-link">MERCURY</a>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <div class="card">
+        <img src="venus.jpeg">
+        <div class="card-body">
+            <p class="card-text">Venus is the hottest planet in the Solar System with average temperatures of 737°C.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Type: Planet</li>
+            <li class="list-group-item">Mass: 4.86747 X 10^24</li>
+            <li class="list-group-item">Age: N/A</li>
+        </ul>
+        <div class="card-body card-links">
+            <a href="https://en.wikipedia.org/wiki/Venus" class="card-link">VENUS</a>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <div class="card">
+        <img src="earth.jpeg">
+        <div class="card-body">
+            <p class="card-text">Earth is the only planet known to support life, with an average temperature of 288K.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Type: Planet</li>
+            <li class="list-group-item">Mass: 5.97237 X 10^24</li>
+            <li class="list-group-item">Age: N/A</li>
+        </ul>
+        <div class="card-body card-links">
+            <a href="https://en.wikipedia.org/wiki/Earth" class="card-link">EARTH</a>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <div class="card">
+        <img src="mars.webp">
+        <div class="card-body">
+            <p class="card-text">Mars, known as the Red Planet, has a day duration similar to Earth's.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Type: Planet</li>
+            <li class="list-group-item">Mass: 6.41712 X 10^23</li>
+            <li class="list-group-item">Age: N/A</li>
+        </ul>
+        <div class="card-body card-links">
+            <a href="https://en.wikipedia.org/wiki/Mars" class="card-link">MARS</a>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <div class="card">
+        <img src="jupiter.jpeg">
+        <div class="card-body">
+            <p class="card-text">Jupiter is the largest planet in our Solar System, with a mass of 1.89819 X 10^27 kg.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Type: Planet</li>
+            <li class="list-group-item">Mass: 1.89819 X 10^27</li>
+            <li class="list-group-item">Age: N/A</li>
+        </ul>
+        <div class="card-body card-links">
+            <a href="https://en.wikipedia.org/wiki/Jupiter" class="card-link">JUPITER</a>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <div class="card">
+        <img src="saturn.jpeg">
+        <div class="card-body">
+            <p class="card-text">Saturn is known for its beautiful ring system and has a mass of 5.68336 X 10^26 kg.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Type: Planet</li>
+            <li class="list-group-item">Mass: 5.68336 X 10^26</li>
+            <li class="list-group-item">Age: N/A</li>
+        </ul>
+        <div class="card-body card-links">
+            <a href="https://en.wikipedia.org/wiki/Saturn" class="card-link">SATURN</a>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <div class="card">
+        <img src="uranus.jpeg">
+        <div class="card-body">
+            <p class="card-text">Uranus is known for its unique tilt and has 27 moons.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Type: Planet</li>
+            <li class="list-group-item">Mass: 8.68127 X 10^25</li>
+            <li class="list-group-item">Age: N/A</li>
+        </ul>
+        <div class="card-body card-links">
+            <a href="https://en.wikipedia.org/wiki/Uranus" class="card-link">URANUS</a>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <div class="card">
+        <img src="neptune.jpeg">
+        <div class="card-body">
+            <p class="card-text">Neptune is the farthest planet from the Sun and has 14 known moons.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Type: Planet</li>
+            <li class="list-group-item">Mass: 1.02413 X 10^26</li>
+            <li class="list-group-item">Age: N/A</li>
+        </ul>
+        <div class="card-body card-links">
+            <a href="https://en.wikipedia.org/wiki/Neptune" class="card-link">NEPTUNE</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

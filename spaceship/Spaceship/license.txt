@@ -1,0 +1,11 @@
+Model Information:
+* title:	Spacecraft
+* source:	https://sketchfab.com/3d-models/spacecraft-721cf3745abc47d8b4f58cfa7706cacb
+* author:	M_O (https://sketchfab.com/m_o)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Spacecraft" (https://sketchfab.com/3d-models/spacecraft-721cf3745abc47d8b4f58cfa7706cacb) by M_O (https://sketchfab.com/m_o) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

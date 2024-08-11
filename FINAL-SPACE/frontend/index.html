@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Solar System </title>
+    <style>
+      body {
+          margin: 0;
+          overflow: hidden;
+      }
+
+      #slider {
+          position: absolute;
+          top: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 80%;
+      }
+  </style>
+  </head>
+  <body>
+    <div id="root" class="a1">
+      <input id="slider" type="range" min="0" max="100" value="50" step="0.1">
+      <input id="speedSlider" type="range" min="0" max="10" value="1" step="0.1">
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/OrbitControls.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script> -->
+   
+    <div id="collisionInfo" style="display: none;"></div>
+    <!-- <button id="viewButton">View Collision</button> -->
+    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="main1.jsx">System();
+
+    </script>
+  </body>
+</html>

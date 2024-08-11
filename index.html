@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Solar System</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        #collisionInfo {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+            z-index: 10;
+        }
+
+        #viewButton {
+            position: fixed;
+            top: 10px;
+            left: 200px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        #viewButton:hover {
+            background-color: #0056b3;
+        }
+
+        #slider,
+        #speedSlider {
+            position: fixed;
+            top: 50px;
+            left: 10px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/OrbitControls.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
+    </head>
+    <body>
+        <input type="range" id="slider" min="0" max="100" value="50" step="0.1" style="position: absolute; top: 10px; left: 10px;">
+        <input type="range" id="speedSlider" min="1" max="10" value="1" step="1" style="position: absolute; top: 40px; left: 10px;">
+        <script type="module" src="main.js">System();</script>
+    </body>
+
+</html>

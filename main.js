@@ -1,6 +1,3 @@
-
-// import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js';
-
 const System = () => {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -17,16 +14,15 @@ const System = () => {
 
     const textureLoader = new THREE.TextureLoader();
     const planetData = [
-        { name: 'Mercury', radius: 0.2, distance: 4, texture: 'textures/mercury.jpeg', rotationPeriod: (5 / 1) * 2, orbitalPeriod: (88 / 365) * 73, axialTilt: 0.034, eccentricity: 0.2056, inclination: 7.00, orbitColor: 0xffcc00  },
-        { name: 'Venus', radius: 0.3, distance: 6, texture: 'textures/venus.jpeg', rotationPeriod: (3.0 / 1)* 2, orbitalPeriod: (225 / 365) * 73, axialTilt: 177.4, eccentricity: 0.0068, inclination: 3.39, orbitColor: 0xff9900  },
-        { name: 'Earth', radius: 0.3, distance: 8, texture: 'textures/earth.jpeg', rotationPeriod: (2.0 / 1)* 2, orbitalPeriod: 73, axialTilt: 23.44, eccentricity: 0.0167, inclination: 0.00, orbitColor: 0x00ccff  },
-        { name: 'Mars', radius: 0.25, distance: 10, texture: 'textures/Mars.webp', rotationPeriod: (1.03 / 1)* 6, orbitalPeriod: (687 / 365) * 73, axialTilt: 25.19, eccentricity: 0.0934, inclination: 1.85 , orbitColor: 0xff3300 },
+        { name: 'Mercury', radius: 0.2, distance: 4, texture: 'textures/mercury.jpeg', rotationPeriod: (58.6 / 1) * 2, orbitalPeriod: (88 / 365) * 73, axialTilt: 0.034, eccentricity: 0.2056, inclination: 7.00, orbitColor: 0xffcc00  },
+        { name: 'Venus', radius: 0.3, distance: 6, texture: 'textures/venus.jpeg', rotationPeriod: (243.0 / 1) * 2, orbitalPeriod: (225 / 365) * 73, axialTilt: 177.4, eccentricity: 0.0068, inclination: 3.39, orbitColor: 0xff9900  },
+        { name: 'Earth', radius: 0.3, distance: 8, texture: 'textures/earth.jpeg', rotationPeriod: (2.0 /1 ) * 3, orbitalPeriod: 73, axialTilt: 23.44, eccentricity: 0.0167, inclination: 0.00, orbitColor: 0x00ccff  },
+        { name: 'Mars', radius: 0.25, distance: 10, texture: 'textures/mars.jpeg', rotationPeriod: (1.03 / 1) * 6, orbitalPeriod: (687 / 365) * 73, axialTilt: 25.19, eccentricity: 0.0934, inclination: 1.85 , orbitColor: 0xff3300 },
         { name: 'Jupiter', radius: 0.5, distance: 14, texture: 'textures/jupiter.jpeg', rotationPeriod: (0.41 / 1) * 100, orbitalPeriod: (4333 / 365) * 73, axialTilt: 3.13, eccentricity: 0.0489, inclination: 1.30 , orbitColor: 0xff9900 },
-        { name: 'Saturn', radius: 0.45, distance: 18, texture: 'textures/saturn.jpeg', rotationPeriod: (0.45 / 1)* 2, orbitalPeriod: (10759 / 365) * 73, axialTilt: 26.73, eccentricity: 0.0565, inclination: 2.48 , orbitColor: 0xffcc00 },
-        { name: 'Uranus', radius: 0.4, distance: 22, texture: 'textures/uranus.jpeg', rotationPeriod: (0.72 / 1)* 2, orbitalPeriod: (30687 / 365) * 73, axialTilt: 97.77, eccentricity: 0.0463, inclination: 0.77 , orbitColor: 0x66ccff },
-        { name: 'Neptune', radius: 0.4, distance: 26, texture: 'textures/neptune.jpeg', rotationPeriod: (0.67 / 1)* 2, orbitalPeriod: (60190 / 365) * 73, axialTilt: 28.32, eccentricity: 0.0095, inclination: 1.77, orbitColor: 0x0033cc  }
+        { name: 'Saturn', radius: 0.45, distance: 18, texture: 'textures/saturn.jpeg', rotationPeriod: (0.45 / 1) * 100, orbitalPeriod: (10759 / 365) * 73, axialTilt: 26.73, eccentricity: 0.0565, inclination: 2.48 , orbitColor: 0xffcc00 },
+        { name: 'Uranus', radius: 0.4, distance: 22, texture: 'textures/uranus.jpeg', rotationPeriod: (0.72 / 1) * 80, orbitalPeriod: (30687 / 365) * 73, axialTilt: 97.77, eccentricity: 0.0463, inclination: 0.77 , orbitColor: 0x66ccff },
+        { name: 'Neptune', radius: 0.4, distance: 26, texture: 'textures/neptune.jpeg', rotationPeriod: (0.67 / 1) * 60, orbitalPeriod: (60190 / 365) * 73, axialTilt: 28.32, eccentricity: 0.0095, inclination: 1.77, orbitColor: 0x0033cc  }
     ];
-
     const planets = [];
 
     // Create planet orbits
@@ -52,7 +48,7 @@ const System = () => {
         planetData.forEach(data => {
             const geometry = new THREE.SphereGeometry(data.radius, 32, 32);
             const texture = textureLoader.load(data.texture);
-            const material = new THREE.MeshBasicMaterial({ map: texture });
+            const material = new THREE.MeshStandardMaterial({ map: texture });
             const planet = new THREE.Mesh(geometry, material);
 
             // Apply axial tilt
@@ -125,45 +121,53 @@ const System = () => {
         if (event.key === 's') movementControls.backward = true;
         if (event.key === 'a') movementControls.left = true;
         if (event.key === 'd') movementControls.right = true;
-        if (event.key === 'ArrowUp') movementControls.up = true;
-        if (event.key === 'ArrowDown') movementControls.down = true;
-        if (event.key === 'Shift') movementControls.boost = true;
+        if (event.key === 'ArrowUp') movementControls.rotateUp = true;
+        if (event.key === 'ArrowDown') movementControls.rotateDown = true;
         if (event.key === 'ArrowLeft') movementControls.rotateLeft = true;
         if (event.key === 'ArrowRight') movementControls.rotateRight = true;
+        if (event.key === 'Shift') movementControls.boost = true;
         if (event.key === ' ') { // Space to reset position
             if (spaceship) spaceship.position.set(0, 0, 5);
         }
     });
-
+    
     window.addEventListener('keyup', function (event) {
         if (event.key === 'w') movementControls.forward = false;
         if (event.key === 's') movementControls.backward = false;
         if (event.key === 'a') movementControls.left = false;
         if (event.key === 'd') movementControls.right = false;
-        if (event.key === 'ArrowUp') movementControls.up = false;
-        if (event.key === 'ArrowDown') movementControls.down = false;
-        if (event.key === 'Shift') movementControls.boost = false;
+        if (event.key === 'ArrowUp') movementControls.rotateUp = false;
+        if (event.key === 'ArrowDown') movementControls.rotateDown = false;
         if (event.key === 'ArrowLeft') movementControls.rotateLeft = false;
         if (event.key === 'ArrowRight') movementControls.rotateRight = false;
+        if (event.key === 'Shift') movementControls.boost = false;
     });
+    
 
     function moveSpaceship() {
         if (!spaceship) return; // Ensure the spaceship is loaded before moving
-
+        
         const speed = movementControls.boost ? 0.2 : 0.1;
-
-        const forwardDirection = new THREE.Vector3(0, 0, -1).applyQuaternion(spaceship.quaternion);
-        const rightDirection = new THREE.Vector3(1, 0, 0).applyQuaternion(spaceship.quaternion);
-
-        if (movementControls.forward) spaceship.position.addScaledVector(forwardDirection, speed);
-        if (movementControls.backward) spaceship.position.addScaledVector(forwardDirection.negate(), speed);
-        if (movementControls.left) spaceship.position.addScaledVector(rightDirection.negate(), speed);
-        if (movementControls.right) spaceship.position.addScaledVector(rightDirection, speed);
-        if (movementControls.up) spaceship.position.y += speed;
-        if (movementControls.down) spaceship.position.y -= speed;
-        if (movementControls.rotateLeft) spaceship.rotation.y -= 0.02;
-        if (movementControls.rotateRight) spaceship.rotation.y += 0.02;
+        
+        // Local directions based on spaceship orientation
+        const localForward = new THREE.Vector3(0, 0, -1).applyQuaternion(spaceship.quaternion);
+        const localBackward = new THREE.Vector3(0, 0, 1).applyQuaternion(spaceship.quaternion);
+        const localLeft = new THREE.Vector3(-1, 0, 0).applyQuaternion(spaceship.quaternion);
+        const localRight = new THREE.Vector3(1, 0, 0).applyQuaternion(spaceship.quaternion);
+        
+        // Move the spaceship based on its local directions
+        if (movementControls.forward) spaceship.position.addScaledVector(localForward, speed);
+        if (movementControls.backward) spaceship.position.addScaledVector(localBackward, speed);
+        if (movementControls.left) spaceship.position.addScaledVector(localLeft, speed);
+        if (movementControls.right) spaceship.position.addScaledVector(localRight, speed);
+        
+        // Rotate the spaceship
+        const rotationSpeed = 0.05;
+        if (movementControls.rotateLeft) spaceship.rotation.y += rotationSpeed;
+        if (movementControls.rotateRight) spaceship.rotation.y -= rotationSpeed;
     }
+    
+    
 
     function checkCollisions() {
         if (!spaceship) return;
@@ -182,28 +186,35 @@ const System = () => {
 
     function animate() {
         requestAnimationFrame(animate);
-
+    
         const elapsedTime = slider.value / slowDownFactor;
         const time = elapsedTime * 0.0001;
-
+    
         const speedFactor = parseFloat(speedSlider.value);
         const adjustedRotationTime = elapsedTime * 0.001 * speedFactor;
-
+    
         planets.forEach((planet, index) => {
             const data = planetData[index];
             const orbitRadius = data.distance * (1 - data.eccentricity);
             const angle = (time * Math.PI * 2) / data.orbitalPeriod;
-
+    
             planet.position.x = orbitRadius * Math.cos(angle);
             planet.position.z = orbitRadius * Math.sin(angle);
-
+    
             planet.rotation.y += (1 / data.rotationPeriod) * adjustedRotationTime; // Simulate planet rotation
         });
-
+    
         moveSpaceship();
         checkCollisions();
-
-        camera.lookAt(scene.position);
+    
+        // Update the camera to follow the spaceship
+        if (spaceship) {
+            const cameraOffset = new THREE.Vector3(0, 2, 10); // Adjust as needed
+            const cameraPosition = spaceship.position.clone().add(cameraOffset);
+            camera.position.copy(cameraPosition);
+            camera.lookAt(spaceship.position);
+        }
+    
         renderer.render(scene, camera);
     }
 
